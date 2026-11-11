@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eden - Boutique Shopping</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader-box">
+      <h2>Eden</h2>
+      <div class="loader-line"><span></span></div>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="Logo Eden" class="brand-logo" onerror="this.src='https://placehold.co/120x120?text=EE'">
+        <h1>Eden</h1>
+      </div>
+      <nav class="nav-links" id="mainNav">
+        <button class="nav-btn active" data-page="home">Accueil</button>
+        <button class="nav-btn" data-page="shop">Boutique</button>
+        <button class="nav-btn" data-page="categories">Catégories</button>
+        <button class="nav-btn" data-page="contact">Contact</button>
+      </nav>
+      <button class="cart-btn" id="openCartBtn" aria-label="Ouvrir le panier">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active" data-page="home">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-card">
+            <h2>Le détail qui fait toute<br>la différence.</h2>
+            <p>Bijoux, tech et déco — tout ce qui définit votre style, réuni en un seul endroit.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-goto="shop">Voir la boutique</button>
+              <button class="btn btn-outline" data-goto="categories">Explorer les catégories</button>
+            </div>
+            <div class="stats">
+              <div class="stat">
+                <h3>Prix</h3>
+                <p>abordable</p>
+              </div>
+              <div class="stat">
+                <h3>Livraison</h3>
+                <p>rapide</p>
+              </div>
+              <div class="stat">
+                <h3>Réponse</h3>
+                <p>en moins de 24H</p>
+              </div>
+            </div>
+          </div>
+          <img src="images/hero.jpeg" class="hero-image" alt="Produit tendance" onerror="this.src='https://placehold.co/900x700?text=Eden'">
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-page="shop">
+      <div class="container">
+        <h2 class="section-title">Boutique</h2>
+        <p class="section-sub">Recherche, filtres et tri pour une navigation fluide.</p>
+        <div class="toolbar">
+          <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+          <select id="categoryFilter">
+            <option value="all">Toutes les catégories</option>
+            <option value="electronique">Électronique</option>
+            <option value="decoration">Décoration</option>
+            <option value="accessoires">Accessoires</option>
+          </select>
+          <select id="priceSort">
+            <option value="default">Tri par défaut</option>
+            <option value="low-high">Prix croissant</option>
+            <option value="high-low">Prix décroissant</option>
+          </select>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="categories">
+      <div class="container">
+        <h2 class="section-title">Catégories</h2>
+        <p class="section-sub">Clique sur une catégorie pour filtrer automatiquement la boutique.</p>
+        <div class="categories">
+          <article class="category-card" data-cat="electronique">
+            <i class="fa-solid fa-headphones"></i>
+            <h3>Électronique</h3>
+            <p>Casques, Airpods, accessoires smart.</p>
+          </article>
+          <article class="category-card" data-cat="decoration">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h3>Décoration</h3>
+            <p>Objets et diffuseurs raffinés pour la maison.</p>
+          </article>
+          <article class="category-card" data-cat="accessoires">
+            <i class="fa-solid fa-gem"></i>
+            <h3>Accessoires</h3>
+            <p>Montres et accessoires tendance au style soigné.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-page="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Commande et support directement via tes canaux.</p>
+        <div class="about-grid" style="margin-bottom: 1rem;">
+          <article class="about-box">
+            <h3>À propos - Notre vision</h3>
+            <img src="images/logo.png" alt="Logo Eden" style="width: 100%; max-width: 220px; border-radius: 12px; display: block; margin: .6rem auto .8rem; border: 1px solid rgba(140, 90, 60, 0.2);" onerror="this.style.display='none'">
+            <p>Proposer des articles tendance et utiles avec une image de marque forte, élégante et cohérente. Chaque détail du site reflète ton univers premium.</p>
+          </article>
+        </div>
+        <div class="contact-card">
+          <h3>Eden</h3>
+          <div class="contact-list">
+            <div class="contact-item"><i class="fa-brands fa-whatsapp"></i><span>+221 77 418 03 79</span></div>
+            <div class="contact-item"><i class="fa-brands fa-instagram"></i><span>@midnight_eden</span></div>
+            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Sénégal - Livraison locale et rapide</span></div>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a class="btn btn-primary" href="https://wa.me/221774180379" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Copyright 2026 - Eden. Boutique chic et dynamique.</p>
+  </footer>
+
+  <aside class="cart-overlay" id="cartOverlay">
+    <div class="cart-panel">
+      <div class="cart-head">
+        <h3>Mon panier</h3>
+        <button class="icon-btn" id="closeCartBtn" aria-label="Fermer le panier"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-foot">
+        <div class="cart-total"><span>Total</span><span id="cartTotal">0 F CFA</span></div>
+        <button class="btn btn-primary" id="checkoutBtn" style="width: 100%;">Commander via WhatsApp</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
